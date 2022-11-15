@@ -19,6 +19,8 @@ dark blue:#1c3eff */
     font-size: 16px;
     display: inline-block;
     position: relative;
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
 }
 
 .btn-white {
@@ -86,6 +88,7 @@ body {
     font-size: 62px;
     font-weight: 400;
     letter-spacing: 15px;
+    animation: moveInLeft 1s ease-out;
 }
 
 .header-heading-primary__sub {
@@ -93,6 +96,7 @@ body {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 18px;
+    animation: moveInRight 1s ease-out;
 }
 
 .btn::after {
@@ -116,6 +120,50 @@ body {
 .btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform:  translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform:  translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform:  translate(0);
+    }
 }
 
 
